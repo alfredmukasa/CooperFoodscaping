@@ -1,4 +1,5 @@
 import {
+  ABOUT_GARDEN_IMAGE,
   ABOUT_INTRO_PARAGRAPHS,
   ABOUT_PORTRAIT,
   ABOUT_TAGS,
@@ -21,13 +22,13 @@ export function AboutJeremy({ sectionId = 'about' }: AboutJeremyProps) {
             <span>Years Growing</span>
           </div>
         </div>
-        {/* <img
+        <img
           className="about-img-garden"
           src={ABOUT_GARDEN_IMAGE.src}
           alt={ABOUT_GARDEN_IMAGE.alt}
           loading="lazy"
           decoding="async"
-        /> */}
+        />
       </div>
       <div className="about-content">
         <div className="section-label">The person behind the plants</div>
