@@ -1,0 +1,230 @@
+.coopers-foodscaping .page-shell {
+  width: 100%;
+}
+
+.coopers-foodscaping .page-hero {
+  background: var(--cream);
+  padding: 6.5rem 5rem 3.5rem;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.coopers-foodscaping .page-hero .section-label {
+  margin-bottom: 0.75rem;
+}
+
+.coopers-foodscaping .page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--forest);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.coopers-foodscaping .page-hero h1 em {
+  color: var(--sage);
+  font-style: italic;
+}
+
+.coopers-foodscaping .page-hero-lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.75;
+}
+
+.coopers-foodscaping .page-section {
+  padding: 4rem 5rem;
+  background: var(--off-white);
+}
+
+.coopers-foodscaping .page-section:nth-of-type(even) {
+  background: var(--cream);
+}
+
+.coopers-foodscaping .page-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--forest);
+  margin-bottom: 1.25rem;
+}
+
+.coopers-foodscaping .page-prose {
+  max-width: 720px;
+}
+
+.coopers-foodscaping .page-prose p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+}
+
+.coopers-foodscaping .page-detail-intro {
+  margin-bottom: 2rem;
+}
+
+.coopers-foodscaping .page-inline-link {
+  color: var(--forest);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.coopers-foodscaping .page-inline-link:hover {
+  color: var(--forest-mid);
+}
+
+.coopers-foodscaping .page-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.coopers-foodscaping .page-audience-card {
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.coopers-foodscaping .page-audience-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.coopers-foodscaping .page-audience-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.coopers-foodscaping .page-mission-split {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 38%);
+  gap: 3rem;
+  align-items: start;
+  max-width: 1000px;
+}
+
+.coopers-foodscaping .page-mission-figure {
+  margin: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(45, 74, 45, 0.12);
+}
+
+.coopers-foodscaping .page-mission-figure img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.coopers-foodscaping .page-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+}
+
+.coopers-foodscaping .page-package-detail {
+  background: var(--cream);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 1.25rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.coopers-foodscaping .page-package-detail-image {
+  aspect-ratio: 21 / 9;
+  background: rgba(45, 74, 45, 0.06);
+}
+
+.coopers-foodscaping .page-package-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.coopers-foodscaping .page-package-detail h3 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-style: italic;
+  color: var(--forest);
+  margin: 0 0 0.25rem;
+  padding: 1.75rem 1.75rem 0;
+}
+
+.coopers-foodscaping .page-package-detail .pkg-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+  padding: 0 1.75rem;
+}
+
+.coopers-foodscaping .page-package-detail ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.75rem;
+}
+
+.coopers-foodscaping .page-package-detail li {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  line-height: 1.45;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.coopers-foodscaping .page-package-detail li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+  font-weight: 700;
+}
+
+.coopers-foodscaping .page-package-detail .pkg-foot {
+  margin: 1rem 0 0;
+  padding: 0 1.75rem 1.75rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.coopers-foodscaping .page-cta-row {
+  margin-top: 2rem;
+}
+
+.coopers-foodscaping .contact-page-wrap .contact-section {
+  padding-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .coopers-foodscaping .page-hero {
+    padding: 5.5rem 1.5rem 2.5rem;
+  }
+
+  .coopers-foodscaping .page-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .coopers-foodscaping .page-mission-split {
+    grid-template-columns: 1fr;
+  }
+
+  .coopers-foodscaping .page-audience-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,11 @@
+/** Page sections in document order */
+export { Navbar } from './Navbar/Navbar'
+export { Hero } from './Hero/Hero'
+export { WhyFoodscaping } from './WhyFoodscaping/WhyFoodscaping'
+export { Services } from './Services/Services'
+export { AboutJeremy } from './AboutJeremy/AboutJeremy'
+export { Gallery } from './Gallery/Gallery'
+export { ServiceArea } from './ServiceArea/ServiceArea'
+export { CtaBanner } from './CtaBanner/CtaBanner'
+export { Contact } from './Contact/Contact'
+export { SiteFooter } from './SiteFooter/SiteFooter'

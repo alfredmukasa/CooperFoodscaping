@@ -1,0 +1,91 @@
+.coopers-foodscaping .why-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--forest);
+  color: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  padding: 6rem 5rem;
+}
+
+.coopers-foodscaping .why-section-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.coopers-foodscaping .why-section > :not(.why-section-backdrop) {
+  position: relative;
+  z-index: 1;
+}
+
+.coopers-foodscaping .why-section .section-label {
+  color: var(--sage-light);
+}
+
+.coopers-foodscaping .why-section .section-label::before {
+  background: var(--sage-light);
+}
+
+.coopers-foodscaping .why-section .section-title {
+  color: var(--cream);
+}
+
+.coopers-foodscaping .why-lead {
+  color: rgba(245, 240, 232, 0.65);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.coopers-foodscaping .why-outline-cta {
+  border-color: var(--sage-light);
+  color: var(--sage-light);
+}
+
+.coopers-foodscaping .why-outline-cta:hover {
+  background: var(--sage-light);
+  color: var(--forest);
+}
+
+.coopers-foodscaping .why-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.coopers-foodscaping .why-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: background 0.2s;
+}
+
+.coopers-foodscaping .why-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.coopers-foodscaping .why-card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.coopers-foodscaping .why-card h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+
+.coopers-foodscaping .why-card p {
+  font-size: 0.85rem;
+  color: rgba(245, 240, 232, 0.65);
+  line-height: 1.6;
+}

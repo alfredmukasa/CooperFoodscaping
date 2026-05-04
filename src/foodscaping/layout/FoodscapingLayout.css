@@ -1,0 +1,10 @@
+.coopers-foodscaping {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.coopers-foodscaping .foodscaping-main {
+  flex: 1;
+  width: 100%;
+}

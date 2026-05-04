@@ -1,0 +1,72 @@
+.coopers-foodscaping footer {
+  background: var(--text-dark);
+  color: rgba(245, 240, 232, 0.6);
+  padding: 4rem 5rem 2.5rem;
+}
+
+.coopers-foodscaping .footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.coopers-foodscaping .footer-brand .nav-logo {
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.coopers-foodscaping .footer-brand .nav-logo-mark {
+  height: 2rem;
+}
+
+.coopers-foodscaping .footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  max-width: 280px;
+}
+
+.coopers-foodscaping .footer-col h5 {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+}
+
+.coopers-foodscaping .footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.coopers-foodscaping .footer-col a {
+  font-size: 0.87rem;
+  color: rgba(245, 240, 232, 0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.coopers-foodscaping .footer-col a:hover {
+  color: var(--cream);
+}
+
+.coopers-foodscaping .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.coopers-foodscaping .footer-bottom a {
+  color: var(--sage);
+  text-decoration: none;
+}

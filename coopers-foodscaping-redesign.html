@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooper's Foodscaping – Edible Landscapes, GTA & York Region</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE7D9;
+    --forest: #2D4A2D;
+    --forest-mid: #3D6B3D;
+    --forest-light: #5C8C5C;
+    --sage: #8FAF7E;
+    --sage-light: #C4D9B8;
+    --earth: #7A5C3A;
+    --earth-light: #B8916A;
+    --rust: #C4522A;
+    --gold: #D4A843;
+    --off-white: #FAFAF7;
+    --text-dark: #1A2A1A;
+    --text-mid: #3D5A3D;
+    --text-muted: #6B7F6B;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--off-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(45,74,45,0.1);
+    transition: background 0.3s;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--forest);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--sage); font-style: italic; }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-mid);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-cta {
+    background: var(--forest) !important;
+    color: var(--cream) !important;
+    padding: 0.55rem 1.4rem !important;
+    border-radius: 2rem !important;
+    text-transform: uppercase !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.06em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--forest-mid) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 5rem;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block; width: 2rem; height: 1px;
+    background: var(--sage);
+  }
+  .hero-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--forest);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-h1 em { color: var(--sage); font-style: italic; }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--forest);
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--forest-mid); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--forest);
+    color: var(--forest);
+    padding: 0.85rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--forest); color: var(--cream); }
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--forest);
+    font-weight: 700;
+    display: block;
+  }
+  .hero-stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-img-container {
+    width: 100%; height: 100%;
+    position: relative;
+  }
+  .hero-img-container img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(45,74,45,0.3));
+  }
+  .hero-img-badge {
+    position: absolute;
+    bottom: 3rem; left: -2rem;
+    background: var(--cream);
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex; align-items: center; gap: 1rem;
+    max-width: 280px;
+  }
+  .badge-icon {
+    width: 44px; height: 44px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .badge-text strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.2rem;
+  }
+  .badge-text span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 6rem 5rem; }
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block; width: 1.5rem; height: 1px;
+    background: var(--sage);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--forest);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { color: var(--sage); font-style: italic; }
+
+  /* ── WHY FOODSCAPING ── */
+  .why-section {
+    background: var(--forest);
+    color: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 6rem 5rem;
+  }
+  .why-section .section-label { color: var(--sage-light); }
+  .why-section .section-label::before { background: var(--sage-light); }
+  .why-section .section-title { color: var(--cream); }
+  .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .why-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: background 0.2s;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.12); }
+  .why-card-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .why-card h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .why-card p { font-size: 0.85rem; color: rgba(245,240,232,0.65); line-height: 1.6; }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--off-white); }
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .package-card {
+    background: var(--cream);
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(45,74,45,0.12);
+  }
+  .package-card.featured {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: var(--cream);
+  }
+  .package-badge {
+    position: absolute; top: -0.8rem; left: 50%; transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 2rem;
+    white-space: nowrap;
+  }
+  .package-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 0.3rem;
+    color: inherit;
+  }
+  .package-card:not(.featured) .package-name { color: var(--forest); }
+  .package-visits {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .package-card:not(.featured) .package-visits { color: var(--text-muted); }
+  .package-card.featured .package-visits { color: var(--sage-light); }
+  .package-features { list-style: none; margin-bottom: 2rem; }
+  .package-features li {
+    font-size: 0.87rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    line-height: 1.4;
+  }
+  .package-card.featured .package-features li { border-color: rgba(255,255,255,0.1); }
+  .package-features li::before {
+    content: '✓';
+    font-size: 0.75rem;
+    color: var(--sage);
+    font-weight: 700;
+    margin-top: 0.05rem;
+    flex-shrink: 0;
+  }
+  .package-card.featured .package-features li::before { color: var(--sage-light); }
+  .package-cta {
+    display: block; text-align: center;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .package-card:not(.featured) .package-cta {
+    border: 1.5px solid var(--forest);
+    color: var(--forest);
+  }
+  .package-card:not(.featured) .package-cta:hover {
+    background: var(--forest);
+    color: var(--cream);
+  }
+  .package-card.featured .package-cta {
+    background: var(--cream);
+    color: var(--forest);
+  }
+  .package-card.featured .package-cta:hover {
+    background: var(--sage-light);
+  }
+
+  /* ── ABOUT JEREMY ── */
+  .about-section {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap img {
+    width: 100%;
+    border-radius: 1.5rem;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: top;
+  }
+  .about-years-badge {
+    position: absolute;
+    bottom: -1.5rem; right: -1.5rem;
+    background: var(--gold);
+    color: var(--text-dark);
+    border-radius: 50%;
+    width: 100px; height: 100px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .about-years-badge span:first-child {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .about-years-badge span:last-child {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.1rem;
+  }
+  .about-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--forest);
+    margin-bottom: 1rem;
+  }
+  .about-content p {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+  .about-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin: 1.8rem 0 2rem;
+  }
+  .about-tag {
+    background: var(--sage-light);
+    color: var(--forest);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2rem;
+  }
+  .testimonial-block {
+    background: var(--forest);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .testimonial-block p {
+    font-size: 0.92rem;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+  .testimonial-block cite {
+    font-size: 0.8rem;
+    color: var(--sage-light);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ── GALLERY ── */
+  .gallery-section { background: var(--off-white); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .gallery-item {
+    border-radius: 0.8rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+  .gallery-item:first-child img { min-height: 400px; }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-item-overlay {
+    position: absolute; inset: 0;
+    background: rgba(45,74,45,0);
+    display: flex; align-items: flex-end;
+    padding: 1rem;
+    transition: background 0.3s;
+  }
+  .gallery-item:hover .gallery-item-overlay { background: rgba(45,74,45,0.35); }
+  .gallery-caption {
+    font-size: 0.82rem;
+    color: var(--cream);
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SERVICE AREA ── */
+  .area-section {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .area-map {
+    background: var(--sage-light);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    aspect-ratio: 1;
+    position: relative;
+  }
+  .area-map iframe {
+    width: 100%; height: 100%;
+    border: none;
+    filter: saturate(0.6);
+  }
+  .area-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1.5rem 0 2rem; }
+  .area-list li {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+  }
+  .area-list li::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-section {
+    background: var(--earth);
+    color: var(--cream);
+    text-align: center;
+    padding: 6rem 5rem;
+  }
+  .cta-section .section-label { justify-content: center; color: var(--earth-light); }
+  .cta-section .section-label::before { background: var(--earth-light); }
+  .cta-section .section-title { color: var(--cream); text-align: center; max-width: 700px; margin: 0 auto 2rem; }
+  .cta-section p {
+    font-size: 1rem;
+    color: rgba(245,240,232,0.7);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+  }
+  .cta-section .btn-primary {
+    background: var(--cream);
+    color: var(--earth);
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+  .cta-section .btn-primary:hover { background: var(--cream-dark); }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--off-white);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--forest);
+    margin-bottom: 1.2rem;
+  }
+  .contact-info p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 2rem; }
+  .contact-details { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .contact-details li {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+  }
+  .contact-details li strong { color: var(--forest); font-weight: 500; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 0.6rem;
+    background: var(--cream);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--sage); }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .form-submit {
+    background: var(--forest);
+    color: var(--cream);
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 2rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--forest-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    color: rgba(245,240,232,0.6);
+    padding: 4rem 5rem 2.5rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .nav-logo { color: var(--cream); display: block; margin-bottom: 1rem; font-size: 1.2rem; }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.75; max-width: 280px; }
+  .footer-col h5 {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-col a {
+    font-size: 0.87rem;
+    color: rgba(245,240,232,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem;
+  }
+  .footer-bottom a { color: var(--sage); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 7rem 1.5rem 3rem; }
+    .hero-right { height: 60vw; }
+    .hero-img-badge { left: 1rem; bottom: 1.5rem; }
+    .why-section { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+    .packages-grid { grid-template-columns: 1fr 1fr; }
+    .about-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item:first-child { grid-column: span 2; }
+    .area-section { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+    .contact-section { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; padding: 0; }
+    footer { padding: 3rem 1.5rem 2rem; }
+  }
+  @media (max-width: 600px) {
+    .packages-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-up:nth-child(1) { transition-delay: 0s; }
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Cooper's <span>Foodscaping</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">GTA & York Region</div>
+    <h1 class="hero-h1">Your Yard,<br><em>Growing Food</em><br>Not Just Grass.</h1>
+    <p class="hero-sub">Edible landscapes that give back — with abundance, biodiversity, and real food from your own property. Serving Georgina, East Gwillimbury, Uxbridge & the GTA.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a Free Consultation</a>
+      <a href="#services" class="btn-outline">View Packages</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">2019</span>
+        <span class="hero-stat-label">Founded</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">50+</span>
+        <span class="hero-stat-label">Yards Transformed</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Chemical-Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-container">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1613787090289-GGLDB5JWS92BNXGMKITS/IMG-6882.jpg" alt="Edible garden landscape" loading="eager">
+      <div class="hero-img-overlay"></div>
+    </div>
+    <div class="hero-img-badge">
+      <div class="badge-icon">🌱</div>
+      <div class="badge-text">
+        <strong>No synthetic chemicals</strong>
+        <span>100% organic approach</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY FOODSCAPING -->
+<section class="why-section" id="why">
+  <div>
+    <div class="section-label">Why it matters</div>
+    <h2 class="section-title">Landscapes That<br><em>Work for You</em></h2>
+    <p style="color:rgba(245,240,232,0.65); font-size:0.97rem; line-height:1.8; max-width:480px; margin-bottom:2rem;">
+      Traditional lawns cost money, water, and time — and give nothing back. An edible landscape is an investment in your health, your wallet, and your local ecosystem.
+    </p>
+    <a href="#contact" class="btn-outline" style="border-color:var(--sage-light); color:var(--sage-light);">Start the Conversation</a>
+  </div>
+  <div class="why-cards">
+    <div class="why-card fade-up">
+      <div class="why-card-icon">🥦</div>
+      <h4>Grow Your Own Food</h4>
+      <p>Save hundreds annually while eating fresh, hyper-local, organic produce from your own yard.</p>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-card-icon">🌍</div>
+      <h4>Sequester Carbon</h4>
+      <p>Healthy soil and biodiverse plantings actively remove carbon and support local ecosystems.</p>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-card-icon">💸</div>
+      <h4>Cut Lawn Costs</h4>
+      <p>Alternative ground covers need less water, fertilizer, and maintenance than monoculture grass.</p>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-card-icon">🌿</div>
+      <h4>Permaculture Design</h4>
+      <p>Work with nature's patterns — food forests, guilds, and companion planting that thrive together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">Maintenance packages</div>
+      <h2 class="section-title">Choose Your<br><em>Growing Plan</em></h2>
+    </div>
+    <p style="font-size:0.9rem; color:var(--text-muted); max-width:300px; text-align:right; line-height:1.7;">
+      Season runs April–October. All packages include special additions — ask us about them.
+    </p>
+  </div>
+  <div class="packages-grid">
+    <!-- Seed -->
+    <div class="package-card fade-up">
+      <div class="package-name">Seed</div>
+      <div class="package-visits">3 visits / season</div>
+      <ul class="package-features">
+        <li>Up to 4 hours per visit</li>
+        <li>Basic organic amendments + veg seeds</li>
+        <li>Weeding, mulching, edging, trimming</li>
+        <li>Guild & companion plantings</li>
+        <li>2 × 30-min coaching calls</li>
+        <li>Basic / recycled materials</li>
+      </ul>
+      <a href="#contact" class="package-cta">Get Started</a>
+    </div>
+    <!-- Sapling -->
+    <div class="package-card fade-up">
+      <div class="package-name">Sapling</div>
+      <div class="package-visits">6 visits / season</div>
+      <ul class="package-features">
+        <li>Up to 4 hours per visit</li>
+        <li>All services except pruning</li>
+        <li>All amendments included</li>
+        <li>Soil testing included</li>
+        <li>Bug netting, trellis, critter defence kit</li>
+        <li>25% off straw · 10% off seedlings</li>
+      </ul>
+      <a href="#contact" class="package-cta">Get Started</a>
+    </div>
+    <!-- Annual (featured) -->
+    <div class="package-card featured fade-up">
+      <div class="package-badge">Most Popular</div>
+      <div class="package-name">Annual</div>
+      <div class="package-visits">8 visits / season</div>
+      <ul class="package-features">
+        <li>Up to 6 hours per visit</li>
+        <li>All services available</li>
+        <li>All amendments + soil testing</li>
+        <li>Design fees for new gardens included</li>
+        <li>$50 off edible perennials</li>
+        <li>25% off straw · 15% off seedlings</li>
+      </ul>
+      <a href="#contact" class="package-cta">Get Started</a>
+    </div>
+    <!-- Perennial -->
+    <div class="package-card fade-up">
+      <div class="package-name">Perennial</div>
+      <div class="package-visits">16 visits / season</div>
+      <ul class="package-features">
+        <li>2 visits per month (up to 4 hrs)</li>
+        <li>Everything in Annual package</li>
+        <li>Free soil & vermicompost delivery</li>
+        <li>KM to site included</li>
+        <li>10% off all plants purchased</li>
+        <li>Priority scheduling</li>
+      </ul>
+      <a href="#contact" class="package-cta">Get Started</a>
+    </div>
+  </div>
+  <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--text-muted);">
+    * Design fees, KM charges, and purchased materials/plants not included unless noted. Custom services available — reach out to discuss your needs.
+  </p>
+</section>
+
+<!-- ABOUT JEREMY -->
+<section class="about-section" id="about">
+  <div class="about-img-wrap">
+    <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1612882401572-OW642JP1DEKF8KV6BJ4M/Jeremy+Website+Assets.png" alt="Jeremy Cooper — Cooper's Foodscaping">
+    <div class="about-years-badge">
+      <span>6+</span>
+      <span>Years Growing</span>
+    </div>
+  </div>
+  <div class="about-content">
+    <div class="section-label">The person behind the plants</div>
+    <h2 class="section-title">Meet <em>Jeremy.</em></h2>
+    <p>Cooper's Foodscaping was started in 2019 by Jeremy Cooper with the intention to bring the biodiversity and abundance of nature to your home. As a seasoned gardener, organic farmer, green roofer and landscaper, Jeremy has transformed dozens of yards into food forests, gardens, and edible landscapes.</p>
+    <p>He is especially fond of permaculture, using a variety of techniques that work within nature's patterns. Focusing on edible, native and non-invasive species — chemical-free, always.</p>
+    <div class="about-tags">
+      <span class="about-tag">Permaculture</span>
+      <span class="about-tag">Organic Farming</span>
+      <span class="about-tag">Food Forests</span>
+      <span class="about-tag">Green Roofing</span>
+      <span class="about-tag">Native Plants</span>
+      <span class="about-tag">Soil Health</span>
+    </div>
+    <div class="testimonial-block">
+      <p>"Jeremy has worked with me on installing 3 of my urban permaculture food forest projects for the past 3 years and has done an excellent job. His clients have been very happy with his professionalism and performance."</p>
+      <cite>— Leila Mireskandari, Urban Guilds Permaculture</cite>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-label">Our work</div>
+  <h2 class="section-title">Transformations That<br><em>Grow & Produce</em></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1613752043813-0YPZIGMPRW3LTIRAT6O2/IMG-8294.jpg" alt="Food garden transformation" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-caption">Food Forest Installation</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1612884757481-4780PM48K5PN8O1O45TT/DSC04291.JPG" alt="Edible garden" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-caption">Edible Landscape Design</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1612885011598-CZBW8N6GFXOTH1AGK5WF/DSC04264%2520%281%29.JPG" alt="Garden maintenance" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-caption">Garden Maintenance</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1612890194604-Q0NXREUZCADAPAQCVCI9/francesco-gallarotti-ruQHpukrN7c-unsplash.jpg" alt="Raised bed garden" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-caption">Raised Bed Installation</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1612888897632-1BM3ZEKFH1DVFXER0NIF/markus-spiske-Yy-dHQP-Ax0-unsplash.jpg" alt="Vegetable seedlings" loading="lazy">
+      <div class="gallery-item-overlay"><span class="gallery-caption">Seedling & Planting</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section" id="area">
+  <div>
+    <div class="section-label">Where we work</div>
+    <h2 class="section-title">Serving the <em>GTA &<br>York Region</em></h2>
+    <p style="font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem;">
+      Based in Georgina Township, we happily travel to bring edible landscapes to homeowners across the region. Additional travel rates may apply outside our primary area.
+    </p>
+    <ul class="area-list">
+      <li>Georgina</li>
+      <li>East Gwillimbury</li>
+      <li>Uxbridge</li>
+      <li>Newmarket</li>
+      <li>Aurora</li>
+      <li>Stouffville</li>
+      <li>Richmond Hill</li>
+      <li>GTA (inquire)</li>
+    </ul>
+    <a href="#contact" class="btn-primary">Check Your Area</a>
+  </div>
+  <div class="area-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184552.0!2d-79.4512!3d44.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d523cfbe27ca45%3A0x7d3b2d985e02a3ee!2sGeorgina%2C%20ON!5e0!3m2!1sen!2sca!4v1"
+      allowfullscreen
+      loading="lazy"
+      title="Cooper's Foodscaping service area map">
+    </iframe>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="section-label">Ready to start?</div>
+  <h2 class="section-title">Turn Your Yard Into a<br><em>Food-Producing Garden</em></h2>
+  <p>Book a free consultation and let's talk about what your space can become — beautiful, edible, and full of life.</p>
+  <a href="#contact" class="btn-primary">Book a Free Consultation</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">Let's Start Your<br><em>Garden Journey</em></h2>
+    <p>Have questions about your property? Ready to book? Fill out the form and Jeremy will get back to you within 1–2 business days.</p>
+    <ul class="contact-details">
+      <li><strong>📍 Location:</strong> Georgina Township, York Region, ON</li>
+      <li><strong>📞 Phone:</strong> Available on request</li>
+      <li><strong>🌱 Approach:</strong> No synthetic chemicals, ever</li>
+      <li><strong>📅 Season:</strong> April – October (limited March & November)</li>
+    </ul>
+  </div>
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Jeremy Cooper" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="hello@example.com" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="location">Your Location / City</label>
+        <input type="text" id="location" placeholder="e.g. Newmarket, ON">
+      </div>
+      <div class="form-group">
+        <label for="service">Interested In</label>
+        <select id="service">
+          <option value="">Select a service...</option>
+          <option>Seed Package</option>
+          <option>Sapling Package</option>
+          <option>Annual Package</option>
+          <option>Perennial Package</option>
+          <option>Custom / Unsure</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message">Tell Us About Your Space</label>
+      <textarea id="message" placeholder="Describe your yard, any goals, questions, or challenges..."></textarea>
+    </div>
+    <button type="submit" class="form-submit" id="submitBtn">Send Message →</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">Cooper's <span>Foodscaping</span></a>
+      <p>Edible landscapes for the GTA & York Region. Growing food, connecting people to land, and building a more sustainable future — one garden at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="#about">About Jeremy</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#area">Service Area</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Seed Package</a></li>
+        <li><a href="#services">Sapling Package</a></li>
+        <li><a href="#services">Annual Package</a></li>
+        <li><a href="#services">Perennial Package</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#contact">Book a Consultation</a></li>
+        <li><a href="https://www.coopersfoodscaping.com/contact">Original Site</a></li>
+        <li><a href="mailto:info@coopersfoodscaping.com">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Cooper's Foodscaping. All rights reserved.</span>
+    <span>Based in Georgina, Ontario · <a href="https://www.coopersfoodscaping.com">coopersfoodscaping.com</a></span>
+  </div>
+</footer>
+
+<script>
+  // Scroll animation observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Sticky nav background
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#5C8C5C';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>

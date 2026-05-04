@@ -1,0 +1,110 @@
+.coopers-foodscaping .contact-section {
+  background: var(--off-white);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.coopers-foodscaping .contact-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--forest);
+  margin-bottom: 1.2rem;
+}
+
+.coopers-foodscaping .contact-info p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.coopers-foodscaping .contact-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coopers-foodscaping .contact-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
+
+.coopers-foodscaping .contact-details li strong {
+  color: var(--forest);
+  font-weight: 500;
+}
+
+.coopers-foodscaping .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coopers-foodscaping .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.coopers-foodscaping .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.coopers-foodscaping .form-group label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+.coopers-foodscaping .form-group input,
+.coopers-foodscaping .form-group select,
+.coopers-foodscaping .form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 0.6rem;
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.coopers-foodscaping .form-group input:focus,
+.coopers-foodscaping .form-group select:focus,
+.coopers-foodscaping .form-group textarea:focus {
+  border-color: var(--sage);
+}
+
+.coopers-foodscaping .form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.coopers-foodscaping .form-submit {
+  background: var(--forest);
+  color: var(--cream);
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.coopers-foodscaping .form-submit:hover:not(:disabled) {
+  background: var(--forest-mid);
+}

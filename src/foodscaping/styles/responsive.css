@@ -1,0 +1,89 @@
+@media (max-width: 900px) {
+  .coopers-foodscaping section {
+    padding: 4rem 1.5rem;
+  }
+
+  .coopers-foodscaping .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .coopers-foodscaping .hero-left {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .coopers-foodscaping .hero-right {
+    height: 60vw;
+  }
+
+  .coopers-foodscaping .hero-img-badge {
+    left: 1rem;
+    bottom: 1.5rem;
+  }
+
+  .coopers-foodscaping .why-section {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+  }
+
+  .coopers-foodscaping .packages-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coopers-foodscaping .about-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 1.5rem;
+  }
+
+  .coopers-foodscaping .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coopers-foodscaping .gallery-section--preview .gallery-item:first-child {
+    grid-column: span 2;
+  }
+
+  .coopers-foodscaping .area-section {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+  }
+
+  .coopers-foodscaping .contact-section {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+  }
+
+  .coopers-foodscaping .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+
+  .coopers-foodscaping footer {
+    padding: 3rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .coopers-foodscaping .packages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coopers-foodscaping .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .coopers-foodscaping .hero-stats {
+    gap: 1.5rem;
+  }
+
+  .coopers-foodscaping .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coopers-foodscaping .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}

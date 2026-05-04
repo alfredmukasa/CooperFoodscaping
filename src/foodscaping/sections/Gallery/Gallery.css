@@ -1,0 +1,81 @@
+.coopers-foodscaping .gallery-section {
+  background: var(--off-white);
+}
+
+.coopers-foodscaping .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.coopers-foodscaping .gallery-item {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.coopers-foodscaping .gallery-section--preview .gallery-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.coopers-foodscaping .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+  aspect-ratio: auto;
+  min-height: 200px;
+}
+
+.coopers-foodscaping .gallery-section--preview .gallery-item:first-child img {
+  min-height: 400px;
+}
+
+.coopers-foodscaping .gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.coopers-foodscaping .gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 74, 45, 0);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  transition: background 0.3s;
+}
+
+.coopers-foodscaping .gallery-item:hover .gallery-item-overlay {
+  background: rgba(45, 74, 45, 0.35);
+}
+
+.coopers-foodscaping .gallery-caption {
+  font-size: 0.82rem;
+  color: var(--cream);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+.coopers-foodscaping .gallery-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.coopers-foodscaping .gallery-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+}
+
+.coopers-foodscaping .gallery-view-all {
+  text-decoration: none;
+}
