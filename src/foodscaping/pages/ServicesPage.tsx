@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { DETAILED_PACKAGES, SERVICES_PAGE_INTRO } from '../content/servicesSite'
+import { DETAILED_PACKAGES, SERVICES_PAGE_INTRO } from '../content/packages'
 import './PageShell.css'
 
 export function ServicesPage() {

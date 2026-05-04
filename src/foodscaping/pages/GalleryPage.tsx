@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { GALLERY_PAGE_COPY } from '../content/gallerySite'
+import { GALLERY_PAGE_COPY } from '../content/gallery'
 import { Gallery } from '../sections/Gallery/Gallery'
 import './PageShell.css'
 

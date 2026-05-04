@@ -4,7 +4,7 @@ import {
   ABOUT_MISSION,
   ABOUT_MISSION_IMAGE,
   AUDIENCE_QUESTIONS,
-} from '../content/aboutSite'
+} from '../content/about'
 import { AboutJeremy } from '../sections/AboutJeremy/AboutJeremy'
 import './PageShell.css'
 
