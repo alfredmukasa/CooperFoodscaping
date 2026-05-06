@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
-import { GALLERY_ITEMS } from '../../content/gallery'
+import {
+  GALLERY_ITEMS,
+  galleryVideoPosterUrl,
+  youtubeGalleryUrls,
+} from '../../content/gallery'
 import './Gallery.css'
 
 type GalleryProps = {
@@ -27,18 +31,51 @@ export function Gallery({ maxItems, showViewAll }: GalleryProps = {}) {
         <em>Grow & Produce</em>
       </h2>
       <div className="gallery-grid">
-        {items.map((item, index) => (
-          <div className="gallery-item" key={`${item.src}-${index}`}>
+        {items.map((item, index) => {
+          const key =
+            item.kind === 'video'
+              ? `${item.youtubeId}-${index}`
+              : `${item.src}-${index}`
+          let posterUrl: string
+          let watchHref: string | undefined
+          if (item.kind === 'video') {
+            posterUrl = galleryVideoPosterUrl(item)
+            watchHref = youtubeGalleryUrls(item.youtubeId).watchUrl
+          } else {
+            posterUrl = item.src
+            watchHref = undefined
+          }
+
+          const media = (
             <img
-              src={item.src}
+              src={posterUrl}
               alt={item.alt}
               loading={index < 2 ? 'eager' : 'lazy'}
+              decoding="async"
             />
-            <div className="gallery-item-overlay">
-              <span className="gallery-caption">{item.caption}</span>
+          )
+
+          return (
+            <div className="gallery-item" key={key}>
+              {watchHref ? (
+                <a
+                  className="gallery-item-media gallery-item-media--video"
+                  href={watchHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${item.caption} (opens YouTube in a new tab)`}
+                >
+                  {media}
+                </a>
+              ) : (
+                <div className="gallery-item-media">{media}</div>
+              )}
+              <div className="gallery-item-overlay">
+                <span className="gallery-caption">{item.caption}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
       {showViewAll ? (
         <div className="gallery-actions">

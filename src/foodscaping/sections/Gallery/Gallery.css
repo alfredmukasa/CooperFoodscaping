@@ -22,7 +22,25 @@
   grid-row: span 2;
 }
 
-.coopers-foodscaping .gallery-item img {
+.coopers-foodscaping .gallery-item-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.coopers-foodscaping .gallery-item-media--video:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+}
+
+.coopers-foodscaping .gallery-item-media--video {
+  cursor: pointer;
+}
+
+.coopers-foodscaping .gallery-item-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -32,11 +50,11 @@
   min-height: 200px;
 }
 
-.coopers-foodscaping .gallery-section--preview .gallery-item:first-child img {
+.coopers-foodscaping .gallery-section--preview .gallery-item:first-child .gallery-item-media img {
   min-height: 400px;
 }
 
-.coopers-foodscaping .gallery-item:hover img {
+.coopers-foodscaping .gallery-item:hover .gallery-item-media img {
   transform: scale(1.04);
 }
 
@@ -48,6 +66,8 @@
   align-items: flex-end;
   padding: 1rem;
   transition: background 0.3s;
+  /* Let clicks reach the YouTube link under the image on video tiles */
+  pointer-events: none;
 }
 
 .coopers-foodscaping .gallery-item:hover .gallery-item-overlay {
