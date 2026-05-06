@@ -24,6 +24,7 @@
   --text-muted: #6b7f6b;
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
+  --nav-h: 72px; /* height of the fixed navbar — used to offset hero sections */
 
   font-family: var(--font-body);
   background: var(--off-white);

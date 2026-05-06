@@ -107,6 +107,85 @@ export const SERVICES_PAGE_INTRO = {
   ],
 } as const
 
+// ─── Hero section ───────────────────────────────────────────────────────────
+export const SERVICES_HERO = {
+  image: {
+    src: 'https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1613529700765-YDW22ECJ0SADXEXQX7LH/DSC04147.jpg',
+    alt: `Freshly harvested vegetables including garlic, red onions, cucumbers, and potatoes — Cooper's Foodscaping`,
+  },
+  headline: 'We help you grow your own health, nutrition and support the environment.',
+  subtext: "Here's How..",
+  ctaLabel: 'Get Started',
+  ctaUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeWayiWal8NslKP0Co-bBQpYx-ThynhykqXl1r-IqFBvArCGg/viewform',
+} as const
+
+// ─── Core service categories (from live site) ────────────────────────────────
+export type SiteService = {
+  id: string
+  name: string
+  image: PackageImage
+  body: string
+  footnote?: string
+  pricing?: string
+}
+
+export const SITE_SERVICES: SiteService[] = [
+  {
+    id: 'edible-landscaping',
+    name: 'Edible Landscaping',
+    image: {
+      src: 'https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1613749329277-1WSF1TS0SS9K6PGQRI54/IMG_20200806_124322637.jpg',
+      alt: 'Herb spiral filled with parsley, basil, chives, rosemary, tarragon, and mint',
+    },
+    body:
+      `Using Permaculture and Agriscaping methods and philosophy, these services will create beautiful and lush spaces with mixes of various edible and supporting plants. We create guilds and stack the functions of plants to create self-supporting ecosystems on any scale. The designs and wants of the clients will be worked out during the consultation process. We can tame a wild area to create a lovely and groomed space, or make a very tame space into a wild one! We can create paths and beds in any shape, size or pattern. We can also help you get the most out of the edible plants in your yard already! Let your creativity come out and let Cooper's Foodscaping guide you! Offerings include companion planting, vegetable and fruit disease management, soil testing, coaching and more.`,
+    footnote:
+      '* Consultation process only necessary when designing brand new landscapes. Additional garden beds, raised beds and changes to existing beds do not require a full consultation process.',
+  },
+  {
+    id: 'raised-beds',
+    name: 'Custom Built Raised Beds',
+    image: {
+      src: 'https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/15cd507e-9b74-4a5e-a833-2fc90c37de81/IMG_20230522_154356433.jpg',
+      alt: 'U-shaped cedar raspberry raised bed on day of install',
+    },
+    body:
+      'We offer a range of styles, from the more traditional cedar or pine boxes, to more unique designs, often using materials found on site. They can be any shape or size, and we will work with you to find what fits best! Options include stones, bricks, cedar logs in both vertical and horizontal orientation, and more. Design fees are included for this service. See more examples in the Gallery!',
+  },
+  {
+    id: 'standard-landscaping',
+    name: 'Standard (non-edible) Landscaping',
+    image: {
+      src: 'https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/0e01fa27-3909-46af-afc3-a0ff5eee0cbc/IMG_20200809_183641036.jpg',
+      alt: 'Patio and wooden structures in a backyard landscape',
+    },
+    body:
+      'This includes patios, benches, pathways, non-edible flower gardens, maintenance of existing spaces, yard clean-ups, pruning and removal of brush, non-edible tree planting, garden edging, soil testing and fertilizing, and more. We are happy to work with clients to meet their needs and desires — feel free to ask about your project!',
+  },
+  {
+    id: 'wild-food-coaching',
+    name: 'Wild Food Education & Coaching',
+    image: {
+      src: 'https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/caec0ab3-8dd9-451c-bef6-0ad30ab804f8/260.jpg',
+      alt: 'Wild grape leaf wraps prepared from foraged ingredients',
+    },
+    body:
+      'As an experienced nibbler, Jeremy has spent many years slowly learning and tasting various wild edible berries, vegetables and nuts. We offer education and coaching in flow with our other services. If clients choose to join us in the garden, we also offer 30-minute phone calls to discuss foraging, what to eat and how to find it, and general vegetable garden support.',
+    pricing: '30 min call — $65 by e-transfer',
+  },
+]
+
+// ─── Testimonial ─────────────────────────────────────────────────────────────
+export const SERVICES_TESTIMONIAL = {
+  quote:
+    'Jeremy is incredibly knowledgeable, enthusiastic, and hard working. With his help we were able to turn our wild weed garden into a lush, beautiful garden full of food.',
+  author: 'Allyson M.',
+  image: {
+    src: 'https://images.squarespace-cdn.com/content/v1/5f8617b37551972932f5e331/1614472453104-N4OTUW8STG90L1RJQ2N6/IMG-8291.jpg',
+    alt: 'Nasturtiums and edible garden greens',
+  },
+} as const
+
 export type DetailedPackage = {
   id: string
   name: string

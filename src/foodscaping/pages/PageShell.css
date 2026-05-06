@@ -4,7 +4,8 @@
 
 .coopers-foodscaping .page-hero {
   background: var(--cream);
-  padding: 6.5rem 5rem 3.5rem;
+  /* top padding = navbar height so content is never hidden behind the fixed nav */
+  padding: calc(var(--nav-h) + 2rem) 5rem 3.5rem;
   border-bottom: 1px solid var(--cream-dark);
 }
 
@@ -213,7 +214,7 @@
 
 @media (max-width: 900px) {
   .coopers-foodscaping .page-hero {
-    padding: 5.5rem 1.5rem 2.5rem;
+    padding: calc(var(--nav-h) + 1.5rem) 1.5rem 2.5rem;
   }
 
   .coopers-foodscaping .page-section {

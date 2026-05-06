@@ -1,0 +1,228 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   ServicesPage.css  –  styles for sections added beyond PageShell defaults
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Hero ──────────────────────────────────────────────────────────────────── */
+.coopers-foodscaping .svc-hero {
+  position: relative;
+  /* total visible height = clamp value + nav offset so the image fills the viewport */
+  height: calc(clamp(380px, 60vh, 640px) + var(--nav-h));
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.coopers-foodscaping .svc-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.coopers-foodscaping .svc-hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* push content down so it clears the fixed navbar */
+  padding: var(--nav-h) 5rem 3.5rem;
+  background: linear-gradient(to top, rgba(18, 30, 18, 0.82) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.coopers-foodscaping .svc-hero-subtext {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.coopers-foodscaping .svc-hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* ── Service category sections ────────────────────────────────────────────── */
+.coopers-foodscaping .svc-category-section {
+  background: var(--off-white);
+}
+
+.coopers-foodscaping .svc-category-section:nth-of-type(even) {
+  background: var(--cream);
+}
+
+.coopers-foodscaping .svc-category-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  max-width: 1100px;
+}
+
+.coopers-foodscaping .svc-reverse .svc-category-wrap {
+  direction: rtl;
+}
+
+.coopers-foodscaping .svc-reverse .svc-category-wrap > * {
+  direction: ltr;
+}
+
+.coopers-foodscaping .svc-category-image-wrap {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(45, 74, 45, 0.14);
+  aspect-ratio: 4 / 3;
+  background: rgba(45, 74, 45, 0.06);
+}
+
+.coopers-foodscaping .svc-category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.coopers-foodscaping .svc-category-image-wrap:hover .svc-category-image {
+  transform: scale(1.04);
+}
+
+.coopers-foodscaping .svc-category-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coopers-foodscaping .svc-category-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--forest);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.coopers-foodscaping .svc-category-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.82;
+  margin: 0;
+}
+
+.coopers-foodscaping .svc-category-pricing {
+  display: inline-block;
+  background: var(--forest);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6rem;
+  margin-top: 0.25rem;
+}
+
+.coopers-foodscaping .svc-category-footnote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+  border-left: 3px solid var(--sage);
+  padding-left: 0.75rem;
+}
+
+/* ── Testimonial ──────────────────────────────────────────────────────────── */
+.coopers-foodscaping .svc-testimonial-section {
+  background: var(--forest) !important;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 5rem;
+}
+
+.coopers-foodscaping .svc-testimonial-figure {
+  flex-shrink: 0;
+  margin: 0;
+  width: 260px;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  aspect-ratio: 3 / 4;
+}
+
+.coopers-foodscaping .svc-testimonial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.coopers-foodscaping .svc-testimonial-quote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.coopers-foodscaping .svc-testimonial-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.coopers-foodscaping .svc-testimonial-quote cite {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--sage-light, #a8c89b);
+  font-style: normal;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  /* navbar is shorter on mobile */
+  .coopers-foodscaping {
+    --nav-h: 64px;
+  }
+
+  .coopers-foodscaping .svc-hero-overlay {
+    padding: var(--nav-h) 1.5rem 2.5rem;
+  }
+
+  .coopers-foodscaping .svc-category-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .coopers-foodscaping .svc-reverse .svc-category-wrap {
+    direction: ltr;
+  }
+
+  .coopers-foodscaping .svc-testimonial-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .coopers-foodscaping .svc-testimonial-figure {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 16 / 9;
+  }
+}
