@@ -1,5 +1,5 @@
 import { useEffect, useState, type RefObject } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { BrandLogoLink } from '../../components/BrandLogoLink'
 import { NAV_ITEMS } from '../../content/navigation'
 import './Navbar.css'
@@ -58,16 +58,23 @@ export function Navbar({ navRef }: NavbarProps) {
         <span className="nav-menu-toggle-bar" />
         <span className="nav-menu-toggle-bar" />
       </button>
-      <ul id="nav-menu" className="nav-links">
+      <ul id="nav-menu" className="nav-links" role="list">
         {NAV_ITEMS.map((item) => (
           <li key={item.to}>
-            <Link
+            <NavLink
               to={item.to}
-              className={item.variant === 'cta' ? 'nav-cta' : undefined}
+              className={({ isActive }) =>
+                [
+                  item.variant === 'cta' ? 'nav-cta' : undefined,
+                  isActive ? 'nav-link-active' : undefined,
+                ]
+                  .filter(Boolean)
+                  .join(' ')
+              }
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>

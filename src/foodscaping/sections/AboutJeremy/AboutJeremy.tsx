@@ -1,5 +1,4 @@
 import {
-  ABOUT_GARDEN_IMAGE,
   ABOUT_INTRO_PARAGRAPHS,
   ABOUT_PORTRAIT,
   ABOUT_TAGS,
@@ -16,19 +15,18 @@ export function AboutJeremy({ sectionId = 'about' }: AboutJeremyProps) {
     <section className="about-section" id={sectionId}>
       <div className="about-img-wrap">
         <div className="about-portrait-block">
-          <img src={ABOUT_PORTRAIT.src} alt={ABOUT_PORTRAIT.alt} />
+          <img
+            src={ABOUT_PORTRAIT.src}
+            alt={ABOUT_PORTRAIT.alt}
+            loading="lazy"
+            decoding="async"
+            sizes="(max-width: 900px) calc(100vw - 3rem), min(42vw, 720px)"
+          />
           <div className="about-years-badge">
             <span>6+</span>
             <span>Years Growing</span>
           </div>
         </div>
-        <img
-          className="about-img-garden"
-          src={ABOUT_GARDEN_IMAGE.src}
-          alt={ABOUT_GARDEN_IMAGE.alt}
-          loading="lazy"
-          decoding="async"
-        />
       </div>
       <div className="about-content">
         <div className="section-label">The person behind the plants</div>
